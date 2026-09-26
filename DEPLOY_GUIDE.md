@@ -30,37 +30,23 @@
 
 ---
 
-## STEP 1. Supabase 무료 데이터베이스 세팅 (소요시간: 약 2분)
+## STEP 1. Supabase 데이터베이스 세팅 (SQL 1번 실행)
 
-1. [Supabase 공식 홈페이지](https://supabase.com)에 접속하여 무료 회원가입 후 로그인합니다.
-2. 대시보드에서 **[+ New Project]** 버튼을 클릭합니다.
-   - **Name**: `pusan-exchange` (원하는 이름)
-   - **Database Password**: 안전한 비밀번호 입력 (기억해두기)
-   - **Region**: `Seoul (ap-northeast-2)` 또는 `Tokyo (ap-northeast-1)` 선택
-   - **Pricing Plan**: `Free` 확인
-   - **[Create new project]** 클릭 후 1~2분 대기합니다.
-3. 프로젝트 생성이 완료되면 왼쪽 메뉴 바에서 **[SQL Editor]** 아이콘을 클릭합니다.
-4. **[+ New query]** 버튼을 누르고, 프로젝트 폴더의 `supabase_schema.sql` 파일 내용을 **전체 복사하여 붙여넣은 뒤 [Run (실행)]**을 클릭합니다.
-   - `Success. No rows returned` 메시지가 나오면 테이블과 보안 정책 설정이 완료된 것입니다.
-5. 왼쪽 메뉴 하단의 **[Project Settings (⚙)]** -> **[Data API]** (또는 **[API]**) 메뉴로 이동합니다.
-   - **Project URL**: `https://xxxxxxxxxxxxxxxx.supabase.co` 복사
-   - **Project API keys**의 `anon` `public` 키: `eyJhbGciOi...` 복사
+사용자분의 프로젝트(`ihbpjyjpvcwhqqmgadvr`)와 `anon key`가 이미 `index.html`에 연동 완료되었습니다!
+이제 Supabase에서 테이블만 생성해 주시면 됩니다:
+
+1. [Supabase 대시보드 (ihbpjyjpvcwhqqmgadvr)](https://supabase.com/dashboard/project/ihbpjyjpvcwhqqmgadvr)에 접속합니다.
+2. 왼쪽 메뉴 바에서 **[SQL Editor]** 아이콘을 클릭합니다.
+3. **[+ New query]** 버튼을 누르고, 프로젝트 폴더의 `supabase_schema.sql` 파일 내용을 **전체 복사하여 붙여넣은 뒤 [Run (실행)]**을 클릭합니다.
+   - `Success. No rows returned` 메시지가 나오면 `search_logs` 테이블 및 보안 정책 생성이 100% 완료됩니다!
 
 ---
 
-## STEP 2. `index.html`에 Supabase 키 입력 (소요시간: 30초)
+## STEP 2. `index.html` 설정 (이미 완료됨!)
 
-`index.html` 파일을 열고, 상단 `<script>` 바로 아래에 있는 설정 부분을 본인의 키로 바꿔줍니다:
-
-```javascript
-/* =========================================================================
- * 🛠️ Supabase 연동 설정 (100% 무료 BaaS)
- * ========================================================================= */
-const SB_URL = 'https://본인의_프로젝트_ID.supabase.co'; // 복사한 Project URL
-const SB_KEY = '본인의_anon_public_키';                 // 복사한 anon public Key
-```
-
-*(참고: 아직 Supabase를 연결하지 않았더라도 `index.html`의 모든 대학 검색, 필터링, 상세 모달은 100% 정상 작동합니다!)*
+사용자분의 Supabase Project URL 및 anon 키가 이미 코드에 안전하게 삽입되었습니다:
+- **Project URL**: `https://ihbpjyjpvcwhqqmgadvr.supabase.co`
+- **anon Key**: `eyJhbGciOiJIUzI1Ni...` (적용 완료)
 
 ---
 
