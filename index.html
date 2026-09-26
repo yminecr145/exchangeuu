@@ -925,9 +925,9 @@ td {
         <div class="stat-card-desc">정규 1차 선발 인원</div>
       </div>
       <div class="stat-card">
-        <span class="stat-card-label">🎯 합격 기회교</span>
+        <span class="stat-card-label">🎯 3차 미달</span>
         <div class="stat-card-value" style="color:var(--rose-700)">73<span>개교</span></div>
-        <div class="stat-card-desc">과거 4개 학기 2~3차 미달 이력</div>
+        <div class="stat-card-desc">과거 4개 학기 미달 이력</div>
       </div>
       <div class="stat-card">
         <span class="stat-card-label">🌍 파견 국가</span>
@@ -961,7 +961,7 @@ td {
       <button class="filter-chip" id="chip-eu" onclick="selectQuickContinent('유럽')">🇪🇺 유럽 (77)</button>
       <button class="filter-chip" id="chip-as" onclick="selectQuickContinent('아시아')">🇯🇵/🇹🇼 아시아 (39)</button>
       <button class="filter-chip" id="chip-na" onclick="selectQuickContinent('북미')">🇺🇸/🇨🇦 북미 (7)</button>
-      <button class="filter-chip" id="chip-hist" onclick="toggleHistOnly()">🔴 합격 유리교만 (미달 이력)</button>
+      <button class="filter-chip" id="chip-hist" onclick="toggleHistOnly()">🔴 3차 미달만</button>
       <button class="filter-chip" id="chip-fav" onclick="toggleFavOnly()">⭐ 찜한 대학 (<span id="chip-fav-count">0</span>)</button>
     </div>
 
@@ -1068,7 +1068,7 @@ td {
             <th>QS / THE</th>
             <th>어학 커트라인</th>
             <th style="text-align:center">모집정원</th>
-            <th>합격 난이도</th>
+            <th>미달 이력</th>
             <th>전공 판정</th>
             <th style="text-align:center">상세보기</th>
           </tr>
@@ -1396,9 +1396,9 @@ function majorBadge(d) {
 }
 
 function popBadge(d) {
-  if (d['인기']) return `<span class="badge b-pop">⭐ 인기교</span>`;
-  const reason = d['최고차수'] >= 3 ? '3차 미달' : (d['미달횟수'] >= 2 ? `미달 ${d['미달횟수']}회` : '미달');
-  return `<span class="badge b-unpop">🔴 기회교 (${reason})</span>`;
+  if (d['인기']) return `<span class="badge b-pop">⭐ 인기</span>`;
+  const reason = d['최고차수'] >= 3 ? '3차 미달' : (d['최고차수'] >= 2 ? '2차 미달' : (d['미달횟수'] >= 2 ? `미달 ${d['미달횟수']}회` : '미달'));
+  return `<span class="badge b-unpop">🔴 ${reason}</span>`;
 }
 
 function applyFilter() {
